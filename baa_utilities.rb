@@ -558,7 +558,8 @@ module BaaUtilities
        
       targets.each do |t|
         unless (t == targets.first)
-          baa_soap_execute_cli_command_by_param_list(baa_base_url, session_id, "DeployJob", "addNamedServerToJobByJobDBKey", [job_db_key, t])
+          result = baa_soap_execute_cli_command_by_param_list(baa_base_url, session_id, "DeployJob", "addNamedServerToJobByJobDBKey", [job_db_key, t])
+          job_db_key = result[:return_value]
         end
       end
 
@@ -606,7 +607,8 @@ module BaaUtilities
        
       targets.each do |t|
         unless (t == targets.first)
-          baa_soap_execute_cli_command_by_param_list(baa_base_url, session_id, "DeployJob", "addComponentToJobByJobDBKey", [job_db_key, t])
+          result = baa_soap_execute_cli_command_by_param_list(baa_base_url, session_id, "DeployJob", "addComponentToJobByJobDBKey", [job_db_key, t])
+          job_db_key = result[:return_value]
         end
       end
 
@@ -640,7 +642,8 @@ module BaaUtilities
        
       targets.each do |t|
         unless (t == targets.first)
-          baa_soap_execute_cli_command_by_param_list(baa_base_url, session_id, "DeployJob", "addNamedServerToJobByJobDBKey", [job_db_key, t])
+          result = baa_soap_execute_cli_command_by_param_list(baa_base_url, session_id, "DeployJob", "addNamedServerToJobByJobDBKey", [job_db_key, t])
+          job_db_key = result[:return_value]
         end
       end
 

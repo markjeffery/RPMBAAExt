@@ -31,12 +31,17 @@ You need to create an integration server pointing to your BladeLogic server to p
   
 You need to import in automation (Environment -> Automation):
   1. The resource automation script that you associate with previously defined integration server:
-      baa_job_gtargets.rb: provide multi selection three for targets allowing to select groups
+      baa_job_targets.rb: provide multi selection three for targets allowing to select groups
       
   2. The automation scripts that you associate with previously defined integration server
-      baa_execute_job_against.rb: execute an existing BladeLogic job to targets you specify, this using the resource baa_job_gtargets.rb
+      baa_execute_job_against.rb: execute an existing BladeLogic job to targets you specify, this using the resource baa_job_targets.rb
       
 
-Improvments
-===========
+BugFixes
+========
+
+Modified baa_utilities.rb to fetch new job_db_key each time a new target is added to a job.
+
+Improvements
+============
 review all the automation that allows to selection targets for groups can be selected.
