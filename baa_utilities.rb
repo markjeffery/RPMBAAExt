@@ -797,5 +797,13 @@ module BaaUtilities
       deploy_job = result[:return_value]
     end
 
+    def baa_get_job_properties(baa_base_url, session_id, job_group_path, job_name)
+      result = baa_soap_execute_cli_command_by_param_list(baa_base_url, session_id, "DeployJob", "listLocalPropertyNamesByGroupAndName",
+                  [
+                    job_group_path,     #groupName
+                    job_name            #jobName
+                  ])
+      job_props = result[:return_value].split(/\n/)
+    end
   end
 end
